@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +8,8 @@ import * as d3 from 'd3';
 })
 export class FrenchMapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private elt: ElementRef) {
+   }
 
   ngOnInit() {
 
@@ -50,7 +51,7 @@ export class FrenchMapComponent implements OnInit {
         .attr('class', 'tooltip')
         .style('opacity', 0);
 
-      const svg = d3.select('body').append('svg')
+      const svg = d3.select(this.elt.nativeElement).append('svg')
         .attr('width', width)
         .attr('height', height);
 
