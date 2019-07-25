@@ -9,11 +9,13 @@ import * as d3 from 'd3';
 })
 export class FrenchMapComponent implements OnInit, OnChanges {
 
-
+// integration des donnees en entree
   @Input() json: any;
 
   constructor(private elt: ElementRef) { }
 
+
+  // Quand les données source sont calculées, onchange du dataset changes
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
     if (changes.json.currentValue) {
@@ -23,7 +25,7 @@ export class FrenchMapComponent implements OnInit, OnChanges {
 
   ngOnInit() {
   }
-
+// Dessin de la carte
   async draw() {
 
     // inspired by https://bl.ocks.org/bricedev/97c53d6ed168902239f7
@@ -125,6 +127,7 @@ export class FrenchMapComponent implements OnInit, OnChanges {
     return result;
   }
 
+  //Calcule du max pour mise à jour de l'echelle de la carte
   getMax(array: any) {
     const a = array.map(r => +r.population).filter(r => !isNaN(r));
     return Math.max(...a);
