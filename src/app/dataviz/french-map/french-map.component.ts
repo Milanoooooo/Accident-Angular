@@ -76,7 +76,7 @@ export class FrenchMapComponent implements OnInit {
         .attr('y', -6)
         .text('Population');
 
-      const france = await d3.json('assets/geojson/departements.json');
+      const france: any = await d3.json('assets/geojson/departements.json');
       const population = await d3.csv('assets/data/population-departement.csv');
 
       const regions = svg.selectAll('.departements')
