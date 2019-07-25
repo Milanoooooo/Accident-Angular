@@ -127,7 +127,7 @@ export class FrenchMapComponent implements OnInit, OnChanges {
     return result;
   }
 
-  //Calcule du max pour mise à jour de l'echelle de la carte
+  //Calcul du max pour mise à jour de l'echelle de la carte
   getMax(array: any) {
     const a = array.map(r => +r.population).filter(r => !isNaN(r));
     return Math.max(...a);
