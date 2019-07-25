@@ -1,5 +1,20 @@
+app-french-map {
+  position: relative; /* If you want text inside of it */
+  display: block;
+  width: 100%;
+  padding-top: 70%; /* 1:1 Aspect Ratio */
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
 .border {
-  stroke-width: .3px;
+  stroke-width: 0.3px;
   fill: none;
   stroke: #333;
 }
@@ -28,6 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.7em;
   width: 200px;
   height: 28px;
   pointer-events: none;
