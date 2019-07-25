@@ -1,13 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "../node_modules/normalize.css/normalize.css";
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
+    font-family: sans-serif;
 }
 
+.border {
+    stroke-width: .3px;
+    fill: none;
+    stroke: #333;
+}
 
+.caption {
+    font-weight: bold;
+}
+
+.key path {
+    display: none;
+}
+
+.key line {
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.departements {
+    stroke: #000;
+    stroke-width: 0.5px;
+    shape-rendering: crispEdges;
+}
+
+.tooltip {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 28px;
+    pointer-events: none;
+    background: black;
+    color: white;
+}

@@ -1,15 +1,15 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
   selector: 'app-french-map',
   templateUrl: './french-map.component.html',
-  styleUrls: ['./french-map.component.scss']
+  styleUrls: ['./french-map.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FrenchMapComponent implements OnInit {
 
-  constructor(private elt: ElementRef) {
-   }
+  constructor(private elt: ElementRef) {}
 
   ngOnInit() {
 
@@ -47,7 +47,7 @@ export class FrenchMapComponent implements OnInit {
       const path = d3.geoPath()
         .projection(projection);
 
-      const tooltip = d3.select('body').append('div')
+      const tooltip = d3.select(this.elt.nativeElement).append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0);
 
