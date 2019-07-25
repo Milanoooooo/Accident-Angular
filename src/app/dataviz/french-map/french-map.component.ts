@@ -18,8 +18,8 @@ export class FrenchMapComponent implements OnInit {
       // inspired by https://bl.ocks.org/bricedev/97c53d6ed168902239f7
 
       const width = 960;
-      const height = 700;
-      const scale = 3000;
+      const height = 960;
+      const scale = 4500;
 
       const formatNumber = d3.format('s');
 
@@ -97,7 +97,7 @@ export class FrenchMapComponent implements OnInit {
             .style('opacity', .9);
           tooltip.html(`${d.properties.nom} (${d.properties.code}): ${paringData.population.replace(/,/g, ' ')}`)
             .style('left', (d3.event.pageX + 5) + 'px')
-            .style('top', (d3.event.pageY - 28) + 'px');
+            .style('top', (d3.event.pageY - 180) + 'px');
         })
         .on('mouseout', (d) => {
           tooltip.transition()
