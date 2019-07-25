@@ -17,6 +17,8 @@ export class ChoroplethComponent implements OnInit {
   async generateKilledFile() {
     const usagers = await d3.csv('assets/data/usagers-2017.csv');
     const caracteristics = await d3.csv('assets/data/caracteristiques-2017.csv');
+    const popdep = await d3.csv('assets/data/population-departement.csv');
+
 
     console.log('usagers', usagers);
     console.log('caracteristics', caracteristics);
@@ -32,10 +34,22 @@ export class ChoroplethComponent implements OnInit {
     });
 
     //Jointure sur la réference de Num_Acc entre les 2 fichiers
-    const result = deps.reduce((acc, n) => {
+    const killedDep = deps.reduce((acc, n) => {
       acc[n] = (acc[n] === undefined) ? 1 : acc[n] + 1;
       return acc;
     }, {});
+
+    killedDep['2A0'] = killedDep[201];
+    killedDep['2B0'] = killedDep[202];
+    console.log('killedDep', killedDep);
+    const result = popdep.map(r => {
+      const k = killedDep[r.numero + '0'];
+      return {
+        numero: r.numero,
+        nom: r.nom,
+        population: k,
+      };
+    });
     console.log('result', result);
   }
 
