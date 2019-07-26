@@ -138,3 +138,4 @@ export class FrenchMapComponent implements OnInit, OnChanges {
   }
 
 }
+
