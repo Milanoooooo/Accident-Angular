@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BarDiagramComponent } from './bar-diagram/bar-diagram.component';
 import { FrenchMapComponent } from './french-map/french-map.component';
 import { WikidataImageListComponent } from './wikidata-image-list/wikidata-image-list.component';
+import { NiceDatePipe } from './nice-date.pipe';
 
 
 
@@ -10,7 +11,8 @@ import { WikidataImageListComponent } from './wikidata-image-list/wikidata-image
   declarations: [
     BarDiagramComponent,
     FrenchMapComponent,
-    WikidataImageListComponent],
+    WikidataImageListComponent,
+    NiceDatePipe],
   imports: [
     CommonModule
   ],
