@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WikidataImagelistComponent } from './wikidata-imagelist.component';
+import { WikidataImageListComponent } from './wikidata-image-list.component';
 
-describe('WikidataImagelistComponent', () => {
-  let component: WikidataImagelistComponent;
-  let fixture: ComponentFixture<WikidataImagelistComponent>;
+describe('WikidataImageListComponent', () => {
+  let component: WikidataImageListComponent;
+  let fixture: ComponentFixture<WikidataImageListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WikidataImagelistComponent ]
+      declarations: [ WikidataImageListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WikidataImagelistComponent);
+    fixture = TestBed.createComponent(WikidataImageListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
